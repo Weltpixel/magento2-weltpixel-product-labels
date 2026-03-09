@@ -1,6 +1,11 @@
 {
     "name": "weltpixel/magento2-weltpixel-product-labels",
     "description": "WeltPixel ProductLabels Module",
+    "require": {
+        "magento/module-catalog": "*",
+        "magento/module-catalog-rule": "*",
+        "magento/module-store": "*"
+    },
     "type": "magento2-module",
     "version": "1.16.0",
      "license": "MIT",
