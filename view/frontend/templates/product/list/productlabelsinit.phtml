@@ -1,0 +1,14 @@
+<?php
+/** @var \WeltPixel\ProductLabels\Helper\Data $wpHelper */
+$wpHelper = $this->helper('WeltPixel\ProductLabels\Helper\Data');
+$cspNonceProvider = $wpHelper->getCspNonceProvider();
+?>
+<script<?php if ($cspNonceProvider): ?> nonce="<?= $block->escapeHtmlAttr($cspNonceProvider->generateNonce()) ?>"<?php endif; ?>>
+    require(['jquery', 'wpProductLabels'], function($, wpProductLabels){
+        $(document).ready(function() {
+            var requestUrl = '<?php  /* @noEscape */ echo $this->getUrl("wpproductlabels/product/index"); ?>';
+            wpProductLabels.init(requestUrl);
+            $(document).trigger("wpproductlabels:init");
+        });
+    });
+</script>
